@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "335601725935",
+    "firebase_url": "https://firetvnotif.firebaseio.com",
+    "project_id": "firetvnotif",
+    "storage_bucket": "firetvnotif.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335601725935:android:4a45d4ff7cc60ce1bcc61a",
+        "android_client_info": {
+          "package_name": "com.galasoft.learntvnotif"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335601725935-vhodvph9tpmt2kt1789nibeq9umtpoi1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAv2pBmNJ93uLeG5uuW-ebfSYKUXUInzzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335601725935-vhodvph9tpmt2kt1789nibeq9umtpoi1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
