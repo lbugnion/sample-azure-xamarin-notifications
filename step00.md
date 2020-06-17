@@ -1,8 +1,8 @@
 # Notifications Client Step 0: Specification
 
-[Previous article: Building a notifications client with Xamarin and Azure](./building-notifications-client.md)
+[Previous article: Building a notifications client with Xamarin and Azure](./README.md)
 
-![Xamarin, Notification Hub, Functions, Cosmos DB](.\building-notifications-client\NotificationsClientIcons.png)
+![Xamarin, Notification Hub, Functions, Cosmos DB](https://i.imgur.com/Udszogi.png)
 
 ## Intro
 
@@ -14,17 +14,17 @@ I have the following specifications in mind:
 
 > Note: The "channel" here is a custom property I am adding to the notification for my own purpose. It's not the same at the Push Notification Topic in Firebase, which allows to push notifications only to selected devices, or the customer segments in Windows, which have the same goal. Here we just use the channel as a way to sort notifications in pages.
 
-![App main page with all the channels](./building-notifications-client/2020-03-23_16-20-06.png)
+![App main page with all the channels](https://i.imgur.com/VgEF7yZ.png)
 
 *App main page with all the channels*
 
 - There should be one page showing all the notifications, and one page per channel with only the corresponding notifications.
 
-![Channel page with the corresponding notifications](./building-notifications-client/2020-03-23_16-19-35.png)
+![Channel page with the corresponding notifications](https://i.imgur.com/ltjgQbb.png)
 
 *Channel page with the corresponding notifications*
 
-![Detail of a notification template](./building-notifications-client/2020-03-23_16-30-11.png)
+![Detail of a notification template](https://i.imgur.com/hQSxBSb.png)
 
 *Detail of a notification template*
 
@@ -38,7 +38,7 @@ I have the following specifications in mind:
 
 - Notifications can be deleted from the app.
 
-![Detail page for a notification](./building-notifications-client/2020-03-23_16-20-19.png)
+![Detail page for a notification](https://i.imgur.com/XbETnSJ.png)
 
 *Detail page for a notification*
 
@@ -48,7 +48,7 @@ I have the following specifications in mind:
 
 The architecture is composed of a few Azure services, as well as a Google service for Android notifications, a Windows service for Windows notifications, and later of an Apple service for iOS notifications.
 
-![Notification system architecture](./building-notifications-client/2020-03-23_15-34-28.png)
+![Notification system architecture](https://i.imgur.com/cPGS4vU.png)
 
 *Notification system architecture*
 

@@ -1,6 +1,6 @@
 # Building a notifications client with Xamarin and Azure
 
-![Xamarin, Notification Hub, Functions, Cosmos DB](.\building-notifications-client\NotificationsClientIcons.png)
+![Xamarin, Notification Hub, Functions, Cosmos DB](https://i.imgur.com/Udszogi.png)
 
 I often find myself needing to send a notification to my mobile device, for example when a job finishes on Azure, when one of my computers at home is done doing something, or when I just want to send an alert when something changes in a system I am observing. 
 
