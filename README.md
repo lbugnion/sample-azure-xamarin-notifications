@@ -6,7 +6,7 @@ I often find myself needing to send a notification to my mobile device, for exam
 
 Normally I would go ahead and create a companion app for the system I am building, and then send notifications to this app, but sometimes it's really overkill to build a full-blown app for this. This is why I decided to build a generic notifications client that I can install on my phone.
 
-What's really cool is that a lot of the development (with dotnet and Xamarin ) can be done locally on my Surface Pro, which makes testing and debugging very much easier, before the services and applications are deployed to Azure and to my devices.
+What's really cool is that a lot of the development (with dotnet and Xamarin) can be done locally on my Surface Pro, which makes testing and debugging very much easier, before the services and applications are deployed to Azure and to my devices.
 
 ## Why Push Notifications? (aka why not SignalR?)
 
