@@ -1,6 +1,6 @@
 # Building a notifications client with Xamarin and Azure
 
-![Xamarin, Notification Hub, Functions, Cosmos DB](.\images\NotificationsClientIcons.png)
+![Xamarin, Notification Hub, Functions, Cosmos DB](.\building-notifications-client\NotificationsClientIcons.png)
 
 I often find myself needing to send a notification to my mobile device, for example when a job finishes on Azure, when one of my computers at home is done doing something, or when I just want to send an alert when something changes in a system I am observing. 
 
@@ -20,13 +20,13 @@ Finally the push notification system also includes retries, in case one device i
 
 I am planning to build this system in the following order:
 
-### [Step 0: Specification]((./building-notifications-client-0.md))
+### Step 0: Specification
 
 In this step we will specify what we want the system to achieve, create a few sketches of the application and get ready :)
 
-> [Go to step 0: Specification](./building-notifications-client-0.md)
+> [Go to step 0: Specification](./step00.md)
 
-### [Step 1: Sending a notification from the Firebase Cloud Messaging](./building-notifications-client-1.md)
+### Step 1: Sending a notification from the Firebase Cloud Messaging
 
 The first step will include:
 
@@ -34,7 +34,9 @@ The first step will include:
 - Building a client app just here to receive the Push Notification and test that it works.
 - Test the notification with [with Postman](https://www.postman.com/).
 
-> [Go to step 1: Sending a notification from Azure Notification Hub](./building-notifications-client-1.md)
+> [Go to step 1.0: Creating the Firebase Cloud Messaging project](./step10.md)
+
+<!-- [Go to step 1.1: Building and configuring the Xamarin client for Android](./step11.md) -->
 
 <!-- ### [Step 2: Sending a notification from Azure Notification Hub](./building-notifications-client-2.md) -->
 
