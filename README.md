@@ -2,6 +2,8 @@
 
 ![Xamarin, Notification Hub, Functions, Cosmos DB](https://i.imgur.com/Udszogi.png)
 
+> We discussed this application on Thursday, June 18th 2020 on the [Microsoft Developer Twitch channel](https://www.twitch.tv/videos/654570633), so join Frank Boucher and myself to see this show!
+
 I often find myself needing to send a notification to my mobile device, for example when a job finishes on Azure, when one of my computers at home is done doing something, or when I just want to send an alert when something changes in a system I am observing. 
 
 Normally I would go ahead and create a companion app for the system I am building, and then send notifications to this app, but sometimes it's really overkill to build a full-blown app for this. This is why I decided to build a generic notifications client that I can install on my phone.
