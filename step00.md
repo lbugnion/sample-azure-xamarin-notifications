@@ -4,7 +4,7 @@
 
 ## Intro
 
-> You can see me speaking to Frank Boucher about this application, and building it together. [Check the video](https://www.youtube.com/ZliwX9Hgy0c)!!
+> You can see me speaking to Frank Boucher about this application, and building it together. [Check the video](https://youtu.be/ZliwX9Hgy0c)!!
 
 [Main page: Building a notifications client with Xamarin and Azure](./README.md)
 

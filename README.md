@@ -4,7 +4,7 @@
 
 ## Intro
 
-> You can see me speaking to Frank Boucher about this application, and building it together. [Check the video](https://www.youtube.com/ZliwX9Hgy0c)!!
+> You can see me speaking to Frank Boucher about this application, and building it together. [Check the video](https://youtu.be/ZliwX9Hgy0c)!!
 
 I often find myself needing to send a notification to my mobile device, for example when a job finishes on Azure, when one of my computers at home is done doing something, or when I just want to send an alert when something changes in a system I am observing. 
 
