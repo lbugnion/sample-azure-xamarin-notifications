@@ -1,10 +1,12 @@
 # Notifications Client Step 0: Specification
 
-[Previous article: Building a notifications client with Xamarin and Azure](./README.md)
-
 ![Xamarin, Notification Hub, Functions, Cosmos DB](https://i.imgur.com/Udszogi.png)
 
 ## Intro
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZliwX9Hgy0c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[Main page: Building a notifications client with Xamarin and Azure](./README.md)
 
 I have decided to build a cross-platform Notifications Client used to receive push notifications when a long-running system needs it. This Notifications Client is generic, and not tied to a specific system or application, but serves as a receiver and repository for all kinds of notifications.
 
@@ -83,7 +85,11 @@ There are three scenarios.
 
 ## In the next article...
 
-Hopefully these specs make sense for everyone! [In the next article, we will get started with the implementation of the notification system!](./step10.md)
+Hopefully these specs make sense for everyone! 
+
+[In the next page, we will get started with the implementation of the notification system](./step10.md)!
+
+[Main page: Building a notifications client with Xamarin and Azure](./README.md)
 
 Happy coding
 

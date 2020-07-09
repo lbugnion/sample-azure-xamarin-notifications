@@ -2,7 +2,9 @@
 
 ![Xamarin, Notification Hub, Functions, Cosmos DB](https://i.imgur.com/Udszogi.png)
 
-> We discussed this application on Thursday, June 18th 2020 on the [Microsoft Developer Twitch channel](https://www.twitch.tv/videos/654570633), so join Frank Boucher and myself to see this show!
+## Intro
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZliwX9Hgy0c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 I often find myself needing to send a notification to my mobile device, for example when a job finishes on Azure, when one of my computers at home is done doing something, or when I just want to send an alert when something changes in a system I am observing. 
 
@@ -104,6 +106,8 @@ In order to allow people to use this on their own, I am also planning to prepare
 - KeyVault for the connection strings and other secrets.
 
 In addition I will write detailed description on how to create the Firebase Cloud Messaging project, and how to configure all the Azure pieces.
+
+**[Next page: Notifications Client Step 0: Specification](./step00.md)**
 
 Happy coding!
 
