@@ -4,7 +4,7 @@
 
 ## Intro
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZliwX9Hgy0c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+> You can see me speaking to Frank Boucher about this application, and building it together. [Check the video](https://www.youtube.com/ZliwX9Hgy0c)!!
 
 [Previous page: Notifications Client Step 0: Specification](./step00.md)
 
