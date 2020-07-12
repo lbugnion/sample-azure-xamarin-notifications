@@ -2,7 +2,9 @@
 using LearnTvNotif.Model;
 using System;
 
+#if DROID
 [assembly: Xamarin.Forms.Dependency(typeof(NotificationsReceiver))]
+#endif
 
 namespace LearnTvNotif.Droid.Model
 {

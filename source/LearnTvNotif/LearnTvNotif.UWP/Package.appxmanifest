@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="ad30962d-5130-4b47-b809-ff907b6a5087"
-    Publisher="CN=753dfbc0-58a1-4a32-8f22-6018f244138a"
+    Name="61441GalaSoft.LbNotif"
+    Publisher="CN=34995E11-E112-479E-9295-CD9FD6FEB9E4"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="7f14c75a-4dba-44b7-b292-6b107c7a96c2" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>LearnTvNotif.UWP</DisplayName>
-    <PublisherDisplayName>753dfbc0-58a1-4a32-8f22-6018f244138a</PublisherDisplayName>
+    <DisplayName>LbNotif</DisplayName>
+    <PublisherDisplayName>GalaSoft</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -32,7 +32,7 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="LearnTvNotif.UWP.App">
       <uap:VisualElements
-        DisplayName="LearnTvNotif.UWP"
+        DisplayName="LbNotif"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="LearnTvNotif.UWP"

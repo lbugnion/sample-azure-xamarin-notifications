@@ -15,7 +15,7 @@ namespace LearnTvNotif
         {
             _notificationsReceiver = DependencyService.Get<INotificationsReceiver>();
             _notificationsReceiver.NotificationReceived += _notificationsReceiver_NotificationReceived;
-            _notificationsReceiver.ErrorReceived += _notificationsReceiver_ErrorReceived; ;
+            _notificationsReceiver.ErrorReceived += _notificationsReceiver_ErrorReceived;
 
             InitializeComponent();
         }

@@ -1,12 +1,17 @@
-﻿using System;
+﻿using LearnTvNotif.Droid.Model;
+using LearnTvNotif.Model;
+using Microsoft.WindowsAzure.Messaging;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Networking.PushNotifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,6 +27,8 @@ namespace LearnTvNotif.UWP
     /// </summary>
     sealed partial class App : Application
     {
+        private INotificationsReceiver _receiver;
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -37,9 +44,9 @@ namespace LearnTvNotif.UWP
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected override async void OnLaunched(LaunchActivatedEventArgs e)
         {
-
+            Xamarin.Forms.DependencyService.Register<NotificationsReceiver>();
 
             Frame rootFrame = Window.Current.Content as Frame;
 
@@ -70,8 +77,59 @@ namespace LearnTvNotif.UWP
                 // parameter
                 rootFrame.Navigate(typeof(MainPage), e.Arguments);
             }
+
             // Ensure the current window is active
             Window.Current.Activate();
+
+            _receiver = Xamarin.Forms.DependencyService.Get<INotificationsReceiver>();
+            await InitializeNotifications();
+        }
+
+        private async Task InitializeNotifications()
+        {
+            Exception hubError = null;
+            PushNotificationChannel channel = null;
+
+            try
+            {
+                channel = await PushNotificationChannelManager
+                    .CreatePushNotificationChannelForApplicationAsync();
+
+                channel.PushNotificationReceived 
+                    += ChannelPushNotificationReceived;
+
+                var hub = new NotificationHub(
+                    "LbNotif",
+                    "Endpoint=sb://lbnotif.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=6MdRmMiinYasoAShHMQk92A3jp/txj1oL/4TogzhU2g=");
+                
+                var result = await hub.RegisterNativeAsync(channel.Uri);
+
+                if (result.RegistrationId != null)
+                {
+                    _receiver.RaiseNotificationReceived("Ready...");
+                }
+            }
+            catch (Exception ex)
+            {
+                _receiver.RaiseErrorReceived($"Error when creating channel: {ex.Message}");
+                return;
+            }
+        }
+
+        private void ChannelPushNotificationReceived(
+            PushNotificationChannel sender,
+            PushNotificationReceivedEventArgs args)
+        {
+            if (args.NotificationType == PushNotificationType.Toast)
+            {
+                var toastNode = args
+                    .ToastNotification
+                    .Content
+                    .FirstChild; // toast
+
+                var launchAttribute = toastNode.Attributes.FirstOrDefault(a => a.NodeName == "launch");
+                _receiver.RaiseNotificationReceived(launchAttribute.NodeValue.ToString());
+            }
         }
 
         /// <summary>
