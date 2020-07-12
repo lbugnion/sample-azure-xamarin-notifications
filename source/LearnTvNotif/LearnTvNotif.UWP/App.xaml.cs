@@ -127,8 +127,10 @@ namespace LearnTvNotif.UWP
                     .Content
                     .FirstChild; // toast
 
-                var launchAttribute = toastNode.Attributes.FirstOrDefault(a => a.NodeName == "launch");
-                _receiver.RaiseNotificationReceived(launchAttribute.NodeValue.ToString());
+                var launchAttribute = toastNode.Attributes.FirstOrDefault(
+                    a => a.NodeName == "launch");
+                _receiver.RaiseNotificationReceived(
+                    launchAttribute.NodeValue.ToString());
             }
         }
 
