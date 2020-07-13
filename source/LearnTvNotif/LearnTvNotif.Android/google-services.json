@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "335601725935",
-    "firebase_url": "https://firetvnotif.firebaseio.com",
-    "project_id": "firetvnotif",
-    "storage_bucket": "firetvnotif.appspot.com"
+    "project_number": "680375780935",
+    "firebase_url": "https://learntvnotif-acd77.firebaseio.com",
+    "project_id": "learntvnotif-acd77",
+    "storage_bucket": "learntvnotif-acd77.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:335601725935:android:4a45d4ff7cc60ce1bcc61a",
+        "mobilesdk_app_id": "1:680375780935:android:8696196aecf2f09a47d362",
         "android_client_info": {
           "package_name": "com.galasoft.learntvnotif"
         }
       },
       "oauth_client": [
         {
-          "client_id": "335601725935-vhodvph9tpmt2kt1789nibeq9umtpoi1.apps.googleusercontent.com",
+          "client_id": "680375780935-oabq4g6h6mo78rsk7v08l7icj64l8dcn.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAv2pBmNJ93uLeG5uuW-ebfSYKUXUInzzQ"
+          "current_key": "AIzaSyBv3pUVVOzHRIVcH2NQld30J8rXEDoSWS4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "335601725935-vhodvph9tpmt2kt1789nibeq9umtpoi1.apps.googleusercontent.com",
+              "client_id": "680375780935-oabq4g6h6mo78rsk7v08l7icj64l8dcn.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
