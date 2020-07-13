@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Firebase.Messaging;
 using LearnTvNotif.Model;
+using WindowsAzure.Messaging;
 using Xamarin.Forms;
 
 namespace LearnTvNotif.Droid.Model
@@ -25,9 +26,13 @@ namespace LearnTvNotif.Droid.Model
 
             System.Diagnostics.Debug.WriteLine(token);
 
-            // TODO Save token
+            var hub = new NotificationHub(
+                Constants.HubName,
+                Constants.HubConnectionString,
+                MainActivity.Context);
 
-            // TODO Send token to Notification Hub
+            // register device with Azure Notification Hub using the token from FCM
+            var registration = hub.Register(token, Constants.HubTagName);
         }
     }
 }

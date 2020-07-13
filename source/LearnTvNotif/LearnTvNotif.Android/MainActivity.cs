@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.Content.PM;
 using Android.Gms.Common;
 using Android.OS;
@@ -12,6 +13,12 @@ namespace LearnTvNotif.Droid
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         private const string ChannelId = "LearnTvNotif.Channel";
+
+        public static MainActivity Context
+        {
+            get;
+            private set;
+        }
 
         private void CreateNotificationChannel()
         {
@@ -58,6 +65,8 @@ namespace LearnTvNotif.Droid
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Context = this;
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
