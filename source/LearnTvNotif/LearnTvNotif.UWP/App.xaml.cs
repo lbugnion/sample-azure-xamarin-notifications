@@ -28,6 +28,7 @@ namespace LearnTvNotif.UWP
     sealed partial class App : Application
     {
         private INotificationsReceiver _receiver;
+        private PushNotificationChannel _channel;
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -87,22 +88,24 @@ namespace LearnTvNotif.UWP
 
         private async Task InitializeNotifications()
         {
-            Exception hubError = null;
-            PushNotificationChannel channel = null;
-
             try
             {
-                channel = await PushNotificationChannelManager
+                if (_channel != null)
+                {
+                    _channel.PushNotificationReceived -= ChannelPushNotificationReceived;
+                }
+
+                _channel = await PushNotificationChannelManager
                     .CreatePushNotificationChannelForApplicationAsync();
 
-                channel.PushNotificationReceived 
+                _channel.PushNotificationReceived 
                     += ChannelPushNotificationReceived;
 
                 var hub = new NotificationHub(
-                    "LbNotif",
-                    "Endpoint=sb://lbnotif.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=6MdRmMiinYasoAShHMQk92A3jp/txj1oL/4TogzhU2g=");
+                    HubConfiguration.Name,
+                    HubConfiguration.ConnectionString);
                 
-                var result = await hub.RegisterNativeAsync(channel.Uri);
+                var result = await hub.RegisterNativeAsync(_channel.Uri);
 
                 if (result.RegistrationId != null)
                 {
