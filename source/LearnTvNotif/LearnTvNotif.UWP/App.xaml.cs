@@ -102,8 +102,8 @@ namespace LearnTvNotif.UWP
                     += ChannelPushNotificationReceived;
 
                 var hub = new NotificationHub(
-                    HubConfiguration.Name,
-                    HubConfiguration.ConnectionString);
+                    Constants.HubName,
+                    Constants.HubConnectionString);
                 
                 var result = await hub.RegisterNativeAsync(_channel.Uri);
 

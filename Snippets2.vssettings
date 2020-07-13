@@ -27,10 +27,10 @@
 
                 _channel.PushNotificationReceived 
                     += ChannelPushNotificationReceived;
-</PropertyValue><PropertyValue name="Item5.Position">6</PropertyValue><PropertyValue name="Item6.DataProvider">{0A057BAD-6706-45D2-A800-683A29EC6BA3}</PropertyValue><PropertyValue name="Item6.ID">D5737D65D34BC9CBE7ED365CEF386DD9</PropertyValue><PropertyValue name="Item6.Name">-&gt; try 2</PropertyValue><PropertyValue name="Item6.UseDefaultName">false</PropertyValue><PropertyValue name="Item6.Tab">General</PropertyValue><PropertyValue name="Item6.TabID">General</PropertyValue><PropertyValue name="Item6.OriginalTabID">General</PropertyValue><PropertyValue name="Item6.OriginalTab">General</PropertyValue><PropertyValue name="Item6.RecordType">1</PropertyValue><PropertyValue name="Item6.Data">
+</PropertyValue><PropertyValue name="Item5.Position">6</PropertyValue><PropertyValue name="Item6.DataProvider">{0A057BAD-6706-45D2-A800-683A29EC6BA3}</PropertyValue><PropertyValue name="Item6.ID">0B80535304CF53F854ECAE946E2EAC1F</PropertyValue><PropertyValue name="Item6.Name">-&gt; try 2</PropertyValue><PropertyValue name="Item6.UseDefaultName">false</PropertyValue><PropertyValue name="Item6.Tab">General</PropertyValue><PropertyValue name="Item6.TabID">General</PropertyValue><PropertyValue name="Item6.OriginalTabID">General</PropertyValue><PropertyValue name="Item6.OriginalTab">General</PropertyValue><PropertyValue name="Item6.RecordType">1</PropertyValue><PropertyValue name="Item6.Data">
                 var hub = new NotificationHub(
-                    HubConfiguration.Name,
-                    HubConfiguration.ConnectionString);
+                    Constants.HubName,
+                    Constants.HubConnectionString);
                 
                 var result = await hub.RegisterNativeAsync(_channel.Uri);
 
