@@ -9,18 +9,18 @@ namespace LearnTvNotif
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        private INotificationsReceiver _notificationsReceiver;
+        private readonly INotificationsReceiver _notificationsReceiver;
 
         public MainPage()
         {
             _notificationsReceiver = DependencyService.Get<INotificationsReceiver>();
-            _notificationsReceiver.NotificationReceived += _notificationsReceiver_NotificationReceived;
-            _notificationsReceiver.ErrorReceived += _notificationsReceiver_ErrorReceived;
+            _notificationsReceiver.NotificationReceived += NotificationsReceiver_NotificationReceived;
+            _notificationsReceiver.ErrorReceived += NotificationsReceiver_ErrorReceived;
 
             InitializeComponent();
         }
 
-        private void _notificationsReceiver_ErrorReceived(object sender, string e)
+        private void NotificationsReceiver_ErrorReceived(object sender, string e)
         {
             Dispatcher.BeginInvokeOnMainThread(() =>
             {
@@ -29,7 +29,7 @@ namespace LearnTvNotif
             });
         }
 
-        private void _notificationsReceiver_NotificationReceived(object sender, string e)
+        private void NotificationsReceiver_NotificationReceived(object sender, string e)
         {
             Dispatcher.BeginInvokeOnMainThread(() =>
             {
