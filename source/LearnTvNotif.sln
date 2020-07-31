@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnTvNotif.Android", "Lea
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearnTvNotif", "LearnTvNotif\LearnTvNotif\LearnTvNotif.csproj", "{852AF0BC-CDC3-468D-82E0-99D01961AE24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnTvNotif.Endpoint", "LearnTvNotif.Endpoint\LearnTvNotif.Endpoint.csproj", "{84133A3E-0322-4840-BFE9-0028980F9129}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnTvNotif.Endpoint", "LearnTvNotif.Endpoint\LearnTvNotif.Endpoint.csproj", "{29E090C6-0BEF-4FFF-8DCB-61FF1F28FF31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,22 +95,22 @@ Global
 		{852AF0BC-CDC3-468D-82E0-99D01961AE24}.Release|x86.ActiveCfg = Release|Any CPU
 		{852AF0BC-CDC3-468D-82E0-99D01961AE24}.Release|x86.Build.0 = Release|Any CPU
 		{852AF0BC-CDC3-468D-82E0-99D01961AE24}.Release|x86.Deploy.0 = Release|Any CPU
-		{84133A3E-0322-4840-BFE9-0028980F9129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84133A3E-0322-4840-BFE9-0028980F9129}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84133A3E-0322-4840-BFE9-0028980F9129}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{84133A3E-0322-4840-BFE9-0028980F9129}.Debug|ARM.Build.0 = Debug|Any CPU
-		{84133A3E-0322-4840-BFE9-0028980F9129}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{84133A3E-0322-4840-BFE9-0028980F9129}.Debug|x64.Build.0 = Debug|Any CPU
-		{84133A3E-0322-4840-BFE9-0028980F9129}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{84133A3E-0322-4840-BFE9-0028980F9129}.Debug|x86.Build.0 = Debug|Any CPU
-		{84133A3E-0322-4840-BFE9-0028980F9129}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84133A3E-0322-4840-BFE9-0028980F9129}.Release|Any CPU.Build.0 = Release|Any CPU
-		{84133A3E-0322-4840-BFE9-0028980F9129}.Release|ARM.ActiveCfg = Release|Any CPU
-		{84133A3E-0322-4840-BFE9-0028980F9129}.Release|ARM.Build.0 = Release|Any CPU
-		{84133A3E-0322-4840-BFE9-0028980F9129}.Release|x64.ActiveCfg = Release|Any CPU
-		{84133A3E-0322-4840-BFE9-0028980F9129}.Release|x64.Build.0 = Release|Any CPU
-		{84133A3E-0322-4840-BFE9-0028980F9129}.Release|x86.ActiveCfg = Release|Any CPU
-		{84133A3E-0322-4840-BFE9-0028980F9129}.Release|x86.Build.0 = Release|Any CPU
+		{29E090C6-0BEF-4FFF-8DCB-61FF1F28FF31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29E090C6-0BEF-4FFF-8DCB-61FF1F28FF31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29E090C6-0BEF-4FFF-8DCB-61FF1F28FF31}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{29E090C6-0BEF-4FFF-8DCB-61FF1F28FF31}.Debug|ARM.Build.0 = Debug|Any CPU
+		{29E090C6-0BEF-4FFF-8DCB-61FF1F28FF31}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{29E090C6-0BEF-4FFF-8DCB-61FF1F28FF31}.Debug|x64.Build.0 = Debug|Any CPU
+		{29E090C6-0BEF-4FFF-8DCB-61FF1F28FF31}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{29E090C6-0BEF-4FFF-8DCB-61FF1F28FF31}.Debug|x86.Build.0 = Debug|Any CPU
+		{29E090C6-0BEF-4FFF-8DCB-61FF1F28FF31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29E090C6-0BEF-4FFF-8DCB-61FF1F28FF31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29E090C6-0BEF-4FFF-8DCB-61FF1F28FF31}.Release|ARM.ActiveCfg = Release|Any CPU
+		{29E090C6-0BEF-4FFF-8DCB-61FF1F28FF31}.Release|ARM.Build.0 = Release|Any CPU
+		{29E090C6-0BEF-4FFF-8DCB-61FF1F28FF31}.Release|x64.ActiveCfg = Release|Any CPU
+		{29E090C6-0BEF-4FFF-8DCB-61FF1F28FF31}.Release|x64.Build.0 = Release|Any CPU
+		{29E090C6-0BEF-4FFF-8DCB-61FF1F28FF31}.Release|x86.ActiveCfg = Release|Any CPU
+		{29E090C6-0BEF-4FFF-8DCB-61FF1F28FF31}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -45,6 +45,8 @@ namespace LearnTvNotif.Endpoint
                 connectionString,
                 hubName);
 
+            var launch = $"{title}|{body}";
+
             var properties = new Dictionary<string, string>
             {
                 {
@@ -54,6 +56,10 @@ namespace LearnTvNotif.Endpoint
                 {
                     "title",
                     title
+                },
+                {
+                    "launch",
+                    launch
                 }
             };
 

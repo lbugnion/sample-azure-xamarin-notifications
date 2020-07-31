@@ -43,6 +43,9 @@ namespace LearnTvNotif.Droid.Model
                 "defaultTemplate",
                 Template,
                 "default");
+
+            var receiver = DependencyService.Get<INotificationsReceiver>();
+            receiver.RaiseNotificationReceived("Ready and registered...");
         }
     }
 }
