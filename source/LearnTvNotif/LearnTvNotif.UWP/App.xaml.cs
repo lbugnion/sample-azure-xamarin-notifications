@@ -2,22 +2,13 @@
 using LearnTvNotif.Model;
 using Microsoft.WindowsAzure.Messaging;
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Networking.PushNotifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 namespace LearnTvNotif.UWP
@@ -29,8 +20,8 @@ namespace LearnTvNotif.UWP
     {
         private static readonly string Template = $"<toast activationType=\"foreground\" launch=\"$(launch)\"><visual><binding template=\"ToastGeneric\"><text id=\"1\">$(title)</text><text id=\"2\">$(body)</text></binding></visual></toast>";
 
-        private INotificationsReceiver _receiver;
         private PushNotificationChannel _channel;
+        private INotificationsReceiver _receiver;
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -40,6 +31,86 @@ namespace LearnTvNotif.UWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+        }
+
+        private void ChannelPushNotificationReceived(
+                    PushNotificationChannel sender,
+                    PushNotificationReceivedEventArgs args)
+        {
+            if (args.NotificationType == PushNotificationType.Toast)
+            {
+                var toastNode = args
+                    .ToastNotification
+                    .Content
+                    .FirstChild; // toast
+
+                var launchAttribute = toastNode.Attributes.FirstOrDefault(
+                    a => a.NodeName == "launch");
+                _receiver.RaiseNotificationReceived(
+                    launchAttribute.NodeValue.ToString());
+            }
+        }
+
+        private async Task InitializeNotifications()
+        {
+            try
+            {
+                if (_channel != null)
+                {
+                    _channel.PushNotificationReceived -= ChannelPushNotificationReceived;
+                }
+
+                _channel = await PushNotificationChannelManager
+                    .CreatePushNotificationChannelForApplicationAsync();
+
+                _channel.PushNotificationReceived
+                    += ChannelPushNotificationReceived;
+
+                var hub = new NotificationHub(
+                    Constants.HubName,
+                    Constants.HubConnectionString);
+
+                var result = await hub.RegisterNativeAsync(_channel.Uri);
+
+                await hub.RegisterTemplateAsync(
+                    _channel.Uri,
+                    Template,
+                    "defaultTemplate");
+
+                if (result.RegistrationId != null)
+                {
+                    _receiver.RaiseNotificationReceived("Ready...");
+                }
+            }
+            catch (Exception ex)
+            {
+                _receiver.RaiseErrorReceived($"Error when creating channel: {ex.Message}");
+                return;
+            }
+        }
+
+        /// <summary>
+        /// Invoked when Navigation to a certain page fails
+        /// </summary>
+        /// <param name="sender">The Frame which failed navigation</param>
+        /// <param name="e">Details about the navigation failure</param>
+        private void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
+        {
+            throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
+        }
+
+        /// <summary>
+        /// Invoked when application execution is being suspended.  Application state is saved
+        /// without knowing whether the application will be terminated or resumed with the contents
+        /// of memory still intact.
+        /// </summary>
+        /// <param name="sender">The source of the suspend request.</param>
+        /// <param name="e">Details about the suspend request.</param>
+        private void OnSuspending(object sender, SuspendingEventArgs e)
+        {
+            var deferral = e.SuspendingOperation.GetDeferral();
+            //TODO: Save application state and stop any background activity
+            deferral.Complete();
         }
 
         /// <summary>
@@ -84,86 +155,6 @@ namespace LearnTvNotif.UWP
 
             _receiver = Xamarin.Forms.DependencyService.Get<INotificationsReceiver>();
             await InitializeNotifications();
-        }
-
-        private async Task InitializeNotifications()
-        {
-            try
-            {
-                if (_channel != null)
-                {
-                    _channel.PushNotificationReceived -= ChannelPushNotificationReceived;
-                }
-
-                _channel = await PushNotificationChannelManager
-                    .CreatePushNotificationChannelForApplicationAsync();
-
-                _channel.PushNotificationReceived 
-                    += ChannelPushNotificationReceived;
-
-                var hub = new NotificationHub(
-                    Constants.HubName,
-                    Constants.HubConnectionString);
-                
-                var result = await hub.RegisterNativeAsync(_channel.Uri);
-
-                await hub.RegisterTemplateAsync(
-                    _channel.Uri,
-                    Template,
-                    "defaultTemplate");
-
-                if (result.RegistrationId != null)
-                {
-                    _receiver.RaiseNotificationReceived("Ready...");
-                }
-            }
-            catch (Exception ex)
-            {
-                _receiver.RaiseErrorReceived($"Error when creating channel: {ex.Message}");
-                return;
-            }
-        }
-
-        private void ChannelPushNotificationReceived(
-            PushNotificationChannel sender,
-            PushNotificationReceivedEventArgs args)
-        {
-            if (args.NotificationType == PushNotificationType.Toast)
-            {
-                var toastNode = args
-                    .ToastNotification
-                    .Content
-                    .FirstChild; // toast
-
-                var launchAttribute = toastNode.Attributes.FirstOrDefault(
-                    a => a.NodeName == "launch");
-                _receiver.RaiseNotificationReceived(
-                    launchAttribute.NodeValue.ToString());
-            }
-        }
-
-        /// <summary>
-        /// Invoked when Navigation to a certain page fails
-        /// </summary>
-        /// <param name="sender">The Frame which failed navigation</param>
-        /// <param name="e">Details about the navigation failure</param>
-        void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
-        {
-            throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
-        }
-
-        /// <summary>
-        /// Invoked when application execution is being suspended.  Application state is saved
-        /// without knowing whether the application will be terminated or resumed with the contents
-        /// of memory still intact.
-        /// </summary>
-        /// <param name="sender">The source of the suspend request.</param>
-        /// <param name="e">Details about the suspend request.</param>
-        private void OnSuspending(object sender, SuspendingEventArgs e)
-        {
-            var deferral = e.SuspendingOperation.GetDeferral();
-            //TODO: Save application state and stop any background activity
-            deferral.Complete();
         }
     }
 }
