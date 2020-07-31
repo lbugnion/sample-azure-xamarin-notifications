@@ -2,7 +2,8 @@
 using System;
 
 #if DROID
-[assembly: Xamarin.Forms.Dependency(typeof(NotificationsReceiver))]
+[assembly: Xamarin.Forms.Dependency(
+    typeof(LearnTvNotif.Droid.Model.NotificationsReceiver))]
 #endif
 
 namespace LearnTvNotif.Droid.Model
