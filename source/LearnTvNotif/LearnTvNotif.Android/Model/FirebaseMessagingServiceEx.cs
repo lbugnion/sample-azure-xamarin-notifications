@@ -10,7 +10,7 @@ namespace LearnTvNotif.Droid.Model
     [IntentFilter(new[] { "com.google.firebase.MESSAGING_EVENT" })]
     public class FirebaseMessagingServiceEx : FirebaseMessagingService
     {
-        private const string Template = "{{\"notification\":{{\"body\":\"$(body)\",\"title\":\"$(title)\"}},\"data\":{{\"title\":\"$(title)\",\"body\":\"$(body)\"}}}}";
+        private const string Template = "{\"notification\":{\"body\":\"$(body)\",\"title\":\"$(title)\"},\"data\":{\"title\":\"$(title)\",\"body\":\"$(body)\"}}";
 
         public override void OnMessageReceived(RemoteMessage remoteMessage)
         {
@@ -42,7 +42,7 @@ namespace LearnTvNotif.Droid.Model
                 pnsHandle,
                 "defaultTemplate",
                 Template,
-                "default");
+                Constants.HubTagName);
 
             var receiver = DependencyService.Get<INotificationsReceiver>();
             receiver.RaiseNotificationReceived("Ready and registered...");
