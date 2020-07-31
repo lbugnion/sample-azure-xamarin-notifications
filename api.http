@@ -1,0 +1,9 @@
+# Sending notification
+
+POST http://localhost:7071/api/send
+content-type: application/json
+
+{
+    "body": "This is a test, let's see if it works!!",
+    "title": "Hello All About Azure!!"
+}

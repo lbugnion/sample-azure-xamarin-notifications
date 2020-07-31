@@ -27,6 +27,8 @@ namespace LearnTvNotif.UWP
     /// </summary>
     sealed partial class App : Application
     {
+        private static readonly string Template = $"<toast activationType=\"foreground\" launch=\"$(launch)\"><visual><binding template=\"ToastGeneric\"><text id=\"1\">$(title)</text><text id=\"2\">$(body)</text></binding></visual></toast>";
+
         private INotificationsReceiver _receiver;
         private PushNotificationChannel _channel;
 
@@ -105,6 +107,11 @@ namespace LearnTvNotif.UWP
                 
                 var result = await hub.RegisterNativeAsync(_channel.Uri);
 
+                await hub.RegisterTemplateAsync(
+                    _channel.Uri,
+                    Template,
+                    "defaultTemplate");
+
                 if (result.RegistrationId != null)
                 {
                     _receiver.RaiseNotificationReceived("Ready...");
@@ -130,6 +137,7 @@ namespace LearnTvNotif.UWP
 
                 var launchAttribute = toastNode.Attributes.FirstOrDefault(
                     a => a.NodeName == "launch");
+
                 _receiver.RaiseNotificationReceived(
                     launchAttribute.NodeValue.ToString());
             }

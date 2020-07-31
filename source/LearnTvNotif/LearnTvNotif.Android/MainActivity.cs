@@ -14,6 +14,12 @@ namespace LearnTvNotif.Droid
     {
         private const string ChannelId = "LearnTvNotif.Channel";
 
+        public static MainActivity Context
+        {
+            get;
+            private set;
+        }
+
         private void CreateNotificationChannel()
         {
             if (Build.VERSION.SdkInt < BuildVersionCodes.O)
@@ -59,6 +65,8 @@ namespace LearnTvNotif.Droid
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Context = this;
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
