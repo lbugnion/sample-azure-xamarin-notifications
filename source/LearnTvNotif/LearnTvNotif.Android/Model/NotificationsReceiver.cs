@@ -1,5 +1,4 @@
-﻿using LearnTvNotif.Droid.Model;
-using LearnTvNotif.Model;
+﻿using LearnTvNotif.Model;
 using System;
 
 #if DROID

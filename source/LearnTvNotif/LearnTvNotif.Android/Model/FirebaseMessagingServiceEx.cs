@@ -1,7 +1,6 @@
 ﻿using Android.App;
 using Firebase.Messaging;
 using LearnTvNotif.Model;
-using WindowsAzure.Messaging;
 using Xamarin.Forms;
 
 namespace LearnTvNotif.Droid.Model
