@@ -26,16 +26,9 @@ namespace LearnTvNotif.Droid.Model
 
             System.Diagnostics.Debug.WriteLine(token);
 
-            var hub = new NotificationHub(
-                Constants.HubName,
-                Constants.HubConnectionString,
-                MainActivity.Context);
+            // TODO Save token
 
-            // register device with Azure Notification Hub using the token from FCM
-            var registration = hub.Register(token, Constants.HubTagName);
-
-            var receiver = DependencyService.Get<INotificationsReceiver>();
-            receiver.RaiseNotificationReceived("Ready and registered...");
+            // TODO Send token to Notification Hub
         }
     }
 }
